@@ -5,13 +5,13 @@
 <div class="post-detail">
   <h1>{{ postDetail?.title }}</h1>
   <p>{{ postDetail?.content }}</p>
-  
+
   <!-- Back to All Blogs button -->
   <button mat-button routerLink="/">Back to All Blogs</button>
-  
+
   <!-- Update button -->
   <button mat-button routerLink="/update/{{ postDetail?.id }}">Update Post</button>
-  
+
   <!-- Delete button -->
   <button mat-button (click)="deletePost(postDetail?.id)">Delete Post</button>
 </div>

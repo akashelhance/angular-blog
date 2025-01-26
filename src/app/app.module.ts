@@ -18,12 +18,15 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http'; // <
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
+
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './auth.guard';
 import { AuthInterceptor } from './auth.interceptor';
+import { UpdatePostComponent } from './update-post/update-post.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -34,8 +37,11 @@ import { AuthInterceptor } from './auth.interceptor';
     BlogDetailComponent,
     CreatePostComponent,
     LoginComponent,
+    UpdatePostComponent,
   ],
   imports: [
+    ReactiveFormsModule,
+
     MatSnackBarModule,
     HttpClientModule,
     MatCardModule,

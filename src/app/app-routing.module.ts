@@ -5,6 +5,7 @@ import { BlogDetailComponent } from './blog-detail/blog-detail.component';
 import { CreatePostComponent } from './create-post/create-post.component';
 import { AuthGuard } from './auth.guard';
 import { LoginComponent } from './login/login.component';
+import { UpdatePostComponent } from './update-post/update-post.component';
 
 const routes: Routes = [
   { path: 'home', component: AllBlogsComponent },
@@ -15,6 +16,7 @@ const routes: Routes = [
     component: CreatePostComponent,
     canActivate: [AuthGuard],
   },
+  { path: 'update/:id', component: UpdatePostComponent }, // Define route for updating a post
 
   { path: '', component: LoginComponent },
   { path: '**', redirectTo: '', pathMatch: 'full', canActivate: [AuthGuard] },
