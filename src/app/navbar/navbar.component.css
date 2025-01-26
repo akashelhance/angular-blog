@@ -1,0 +1,29 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.sidenav-container {
+  height: 100%;
+  display: flex;
+}
+
+mat-sidenav {
+  width: 250px;
+}
+
+mat-sidenav-content {
+  flex: 1;
+  padding: 16px;
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    display: block;
+  }
+}
