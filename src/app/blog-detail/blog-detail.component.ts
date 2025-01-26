@@ -8,20 +8,20 @@ import { CommonService } from '../common.service';
   styleUrls: ['./blog-detail.component.css']
 })
 export class BlogDetailComponent implements OnInit {
-  postId!: number; // The ID from the route
-  postDetail: any; // The data received from the API
+  postId!: number; 
+  postDetail: any; 
 
   constructor(private route: ActivatedRoute, private apiService: CommonService) {}
 
   ngOnInit(): void {
-    // Get the 'id' from the route
+    
     this.route.params.subscribe((params) => {
-      this.postId = +params['id']; // Convert string to number
-      this.getPostById(this.postId); // Call the API with the ID
+      this.postId = +params['id']; 
+      this.getPostById(this.postId); 
     });
   }
 
-  // Call the API to get the post details
+
   getPostById(id: number): void {
     this.apiService.get(`posts/${id}`).subscribe(
       (response) => {

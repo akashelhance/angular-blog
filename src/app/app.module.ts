@@ -15,6 +15,7 @@ import { BlogDetailComponent } from './blog-detail/blog-detail.component';
 import { CreatePostComponent } from './create-post/create-post.component';
 import { FormsModule } from '@angular/forms'; // Import this for ngModel
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http'; // <-- Import this
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 import { MatCardModule } from '@angular/material/card';
@@ -35,6 +36,7 @@ import { AuthInterceptor } from './auth.interceptor';
     LoginComponent,
   ],
   imports: [
+    MatSnackBarModule,
     HttpClientModule,
     MatCardModule,
     MatFormFieldModule,

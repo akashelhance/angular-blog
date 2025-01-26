@@ -1,44 +1,46 @@
 <div class="create-post-container">
-    <mat-card class="create-post-card">
-      <mat-card-header>
-        <mat-card-title>Create a New Post</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <form (ngSubmit)="onSubmit()" class="form">
-          <mat-form-field appearance="outline" class="full-width">
-            <mat-label>Title</mat-label>
-            <input
-              matInput
-              id="title"
-              type="text"
-              [(ngModel)]="title"
-              name="title"
-              required
-            />
-          </mat-form-field>
-          <mat-form-field appearance="outline" class="full-width">
-            <mat-label>Content</mat-label>
-            <textarea
-              matInput
-              id="content"
-              [(ngModel)]="content"
-              name="content"
-              required
-              rows="5"
-            ></textarea>
-          </mat-form-field>
-          <div class="button-container">
-            <button
-              mat-raised-button
-              color="primary"
-              type="submit"
-              class="submit-button"
-            >
-              Create Post
-            </button>
-          </div>
-        </form>
-      </mat-card-content>
-    </mat-card>
-  </div>
-  
+  <mat-card class="create-post-card">
+    <mat-card-header>
+      <mat-card-title>Create a New Post</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form (ngSubmit)="onSubmit()" class="form" #createPostForm="ngForm">
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Title</mat-label>
+          <input
+            matInput
+            id="title"
+            type="text"
+            [(ngModel)]="title"
+            name="title"
+            required
+            #titleInput="ngModel"
+          />
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Content</mat-label>
+          <textarea
+            matInput
+            id="content"
+            [(ngModel)]="content"
+            name="content"
+            required
+            rows="5"
+            #contentInput="ngModel"
+          ></textarea>
+        </mat-form-field>
+        <div class="button-container">
+          <button
+            mat-raised-button
+            color="primary"
+            type="submit"
+            class="submit-button"
+            [disabled]="!createPostForm.valid"
+          >
+            Create Post
+          </button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
