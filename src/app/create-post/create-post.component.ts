@@ -6,13 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./create-post.component.css']
 })
 export class CreatePostComponent {
-  title: string = '';
-  content: string = '';
+  title: string = ''; // Ensure type is string
+  content: string = ''; // Ensure type is string
 
   onSubmit() {
     console.log('Post Created:', { title: this.title, content: this.content });
     alert('Post created successfully!');
     this.title = '';
-    this.content = ''; // Clear the form
+    this.content = ''; // Clear the form after submission
   }
 }

@@ -1,0 +1,37 @@
+/* Center the form on the page */
+.create-post-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 1rem;
+    background-color: #f5f5f5;
+  }
+  
+  /* Style the card */
+  .create-post-card {
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: white;
+  }
+  
+  /* Ensure form fields take up full width */
+  .full-width {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  
+  /* Align the button to the right */
+  .button-container {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .submit-button {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+  }
+  

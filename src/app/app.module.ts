@@ -13,6 +13,13 @@ import { MatListModule } from '@angular/material/list';
 import { AllBlogsComponent } from './all-blogs/all-blogs.component';
 import { BlogDetailComponent } from './blog-detail/blog-detail.component';
 import { CreatePostComponent } from './create-post/create-post.component';
+import { FormsModule } from '@angular/forms'; // Import this for ngModel
+
+
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+
 
 @NgModule({
   declarations: [
@@ -23,6 +30,9 @@ import { CreatePostComponent } from './create-post/create-post.component';
     CreatePostComponent,
   ],
   imports: [
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
     BrowserModule,
     BrowserAnimationsModule,
     MatToolbarModule,
@@ -30,6 +40,7 @@ import { CreatePostComponent } from './create-post/create-post.component';
     MatIconModule,
     MatSidenavModule,
     AppRoutingModule,
+    FormsModule, 
     RouterModule, 
     MatListModule,  
   ],
