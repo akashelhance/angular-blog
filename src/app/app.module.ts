@@ -14,11 +14,15 @@ import { AllBlogsComponent } from './all-blogs/all-blogs.component';
 import { BlogDetailComponent } from './blog-detail/blog-detail.component';
 import { CreatePostComponent } from './create-post/create-post.component';
 import { FormsModule } from '@angular/forms'; // Import this for ngModel
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http'; // <-- Import this
 
 
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { LoginComponent } from './login/login.component';
+import { AuthGuard } from './auth.guard';
+import { AuthInterceptor } from './auth.interceptor';
 
 
 @NgModule({
@@ -28,10 +32,13 @@ import { MatInputModule } from '@angular/material/input';
     AllBlogsComponent,
     BlogDetailComponent,
     CreatePostComponent,
+    LoginComponent,
   ],
   imports: [
+    HttpClientModule,
     MatCardModule,
     MatFormFieldModule,
+    HttpClientModule,
     MatInputModule,
     BrowserModule,
     BrowserAnimationsModule,
@@ -44,7 +51,11 @@ import { MatInputModule } from '@angular/material/input';
     RouterModule, 
     MatListModule,  
   ],
-  providers: [],
+  providers: [AuthGuard, {
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true,
+  },],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

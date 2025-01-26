@@ -1,11 +1,25 @@
-<div class="post-list">
+<!-- 
+<div class="" *ngIf="loggedIn">
+<p (click)="logout()">Logout</p>
+</div>
+
+<div *ngIf="!loggedIn">
+    <p (click)="loginWithGoogle()" >Login with Google</p>
+
+</div> -->
+
+
+
+
+
+<div class="post-list mt-5">
     <h1>All Blog Posts</h1>
   
     <!-- Check if there are no posts -->
     <div *ngIf="posts.length === 0">No blog posts available.</div>
   
     <!-- Loop through posts if there are any -->
-    <div *ngFor="let post of posts" class="post-card">
+    <div *ngFor="let post of posts" class="post-card card">
       <h2>{{ post.title }}</h2>
       <p>{{ post.content }}</p>
       <button mat-button [routerLink]="['/post-detail', post.id]">Read more</button>
