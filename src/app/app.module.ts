@@ -12,6 +12,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { MatListModule } from '@angular/material/list';
 import { AllBlogsComponent } from './all-blogs/all-blogs.component';
 import { BlogDetailComponent } from './blog-detail/blog-detail.component';
+import { CreatePostComponent } from './create-post/create-post.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { BlogDetailComponent } from './blog-detail/blog-detail.component';
     NavbarComponent,
     AllBlogsComponent,
     BlogDetailComponent,
+    CreatePostComponent,
   ],
   imports: [
     BrowserModule,
