@@ -27,6 +27,7 @@ import { AuthGuard } from './auth.guard';
 import { AuthInterceptor } from './auth.interceptor';
 import { UpdatePostComponent } from './update-post/update-post.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     CreatePostComponent,
     LoginComponent,
     UpdatePostComponent,
+    DashboardComponent,
   ],
   imports: [
     ReactiveFormsModule,

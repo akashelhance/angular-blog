@@ -1,13 +1,23 @@
-
-.posts-container {
+/* Style the main container */
+div {
+  font-family: Arial, sans-serif;
   margin: 20px auto;
-  padding: 20px;
   max-width: 900px;
+  padding: 20px;
   background-color: #f9f9f9;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Welcome heading */
+h1 {
+  font-size: 2rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Post cards */
 .post-card {
   background-color: white;
   padding: 20px;
@@ -18,7 +28,7 @@
 }
 
 .post-card:hover {
-  transform: scale(1.03); 
+  transform: scale(1.03);
 }
 
 .post-title {
@@ -33,49 +43,42 @@
   color: #555;
   line-height: 1.6;
   margin-bottom: 20px;
-  height: 60px; 
+  height: 60px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-
-.pagination {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-}
-
-.pagination-button {
+/* Read More button */
+.read-more-button {
   background-color: #007bff;
   color: white;
   padding: 8px 16px;
   border: none;
   border-radius: 4px;
-  margin: 0 10px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-.pagination-button:hover {
+.read-more-button:hover {
   background-color: #0056b3;
 }
 
-.pagination-button:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
-}
-
-.pagination-text {
-  font-size: 16px;
-  color: #333;
-}
-
-
+/* No posts available message */
 .no-posts {
   text-align: center;
   font-size: 18px;
   color: #888;
   margin-top: 40px;
+}
+
+/* Error message */
+.error-message {
+  color: #d9534f;
+  font-weight: bold;
+  text-align: center;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  padding: 10px;
+  border-radius: 4px;
 }

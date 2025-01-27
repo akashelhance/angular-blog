@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CommonService } from '../common.service';
+import { UserPostsService } from '../user-posts.service'; // Import your service
 
 @Component({
   selector: 'app-blog-detail',
@@ -8,20 +9,29 @@ import { CommonService } from '../common.service';
   styleUrls: ['./blog-detail.component.css']
 })
 export class BlogDetailComponent implements OnInit {
-  postId!: number; 
-  postDetail: any; 
+  postId!: number;
+  postDetail: any;
+  currentUser: any;  
 
   constructor(
     private route: ActivatedRoute,
     private apiService: CommonService,
-    private router: Router // Inject the router to navigate after deletion
+    private router: Router, 
+    private userPostsService: UserPostsService, 
   ) {}
 
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
-      this.postId = +params['id']; 
-      this.getPostById(this.postId); 
+      this.postId = +params['id'];
+      this.getPostById(this.postId);
+
+      this.getCurrentUser();  // Get the current user details
     });
+  }
+
+  getCurrentUser(): void {
+    const user = JSON.parse(localStorage.getItem('current_user') || '{}');
+    this.currentUser = user;
   }
 
   getPostById(id: number): void {
@@ -51,5 +61,4 @@ export class BlogDetailComponent implements OnInit {
       );
     }
   }
-  
 }

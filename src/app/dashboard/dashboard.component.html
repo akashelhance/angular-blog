@@ -1,0 +1,25 @@
+<div>
+    <h1>Welcome to the Dashboard!</h1>
+    <p>This is the user's dashboard where you can manage your posts, view and etc</p>
+  </div>
+  
+  <div *ngIf="errorMessage; else postsTemplate">
+    <p class="error-message">{{ errorMessage }}</p>
+  </div>
+  
+  <ng-template #postsTemplate>
+    <div *ngIf="userPosts.length > 0; else noPosts">
+     
+        <div *ngFor="let post of userPosts" class="post-card">
+          <h3 class="post-title">{{ post.title }}</h3>
+          <p class="post-content">{{ post.content | slice: 0:100 }}</p>
+          <button (click)="navigateToBlogDetail(post.id)" class="read-more-button">Read More</button>
+         </div>
+ 
+    </div>
+    
+    <ng-template #noPosts>
+      <p class="no-posts">No posts available.</p>
+    </ng-template>
+  </ng-template>
+  

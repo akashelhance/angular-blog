@@ -6,13 +6,12 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class CommonService {
-  private baseUrl = 'http://localhost:3000'; 
+  private baseUrl = 'http://localhost:3000';
 
   constructor(private http: HttpClient) {}
 
-
   getAuthToken(): string {
-    return localStorage.getItem('authToken') || ''; 
+    return localStorage.getItem('authToken') || '';
   }
 
   get<T>(endpoint: string, params?: any): Observable<T> {
@@ -28,7 +27,7 @@ export class CommonService {
   }
 
   delete<T>(endpoint: string): Observable<T> {
-    const token = this.getAuthToken(); 
+    const token = this.getAuthToken();
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
 
     return this.http.delete<T>(`${this.baseUrl}/${endpoint}`, { headers });
